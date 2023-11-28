@@ -122,11 +122,31 @@
                                         </subviews>
                                         <variation key="heightClass=compact" axis="vertical"/>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2jF-pq-6wi" userLabel="SwipeLeft">
+                                        <rect key="frame" x="12.5" y="162.5" width="171" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow Left" translatesAutoresizingMaskIntoConstraints="NO" id="pMo-hD-VjR">
+                                                <rect key="frame" x="81" y="0.0" width="9.5" height="13"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="9.5" id="Vyp-t9-8RW"/>
+                                                    <constraint firstAttribute="height" constant="13" id="hwx-3L-u9P"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe left to share" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSq-9A-ntr">
+                                                <rect key="frame" x="0.0" y="21" width="171" height="29"/>
+                                                <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="26"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.71764705882352942" green="0.84313725490196079" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="2jF-pq-6wi" firstAttribute="centerY" secondItem="T9j-Lg-boa" secondAttribute="centerY" id="2ic-ez-Jed"/>
                                     <constraint firstAttribute="bottom" secondItem="tWp-3h-FyR" secondAttribute="bottom" constant="42" id="5Ha-jf-H0n"/>
                                     <constraint firstItem="pE3-xs-zf8" firstAttribute="centerX" secondItem="T9j-Lg-boa" secondAttribute="centerX" id="7kx-Ev-kfx"/>
+                                    <constraint firstItem="USG-bh-DUJ" firstAttribute="leading" secondItem="2jF-pq-6wi" secondAttribute="trailing" id="DGa-ec-3ZC"/>
                                     <constraint firstItem="tWp-3h-FyR" firstAttribute="centerY" secondItem="T9j-Lg-boa" secondAttribute="centerY" id="MAN-Qi-Obe"/>
                                     <constraint firstAttribute="trailing" secondItem="tWp-3h-FyR" secondAttribute="trailing" constant="42" id="O11-R1-t9J"/>
                                     <constraint firstItem="w9v-mV-fji" firstAttribute="top" secondItem="T9j-Lg-boa" secondAttribute="top" constant="16" id="TlY-B1-nqO">
@@ -141,7 +161,12 @@
                                     <constraint firstItem="USG-bh-DUJ" firstAttribute="centerX" secondItem="T9j-Lg-boa" secondAttribute="centerX" id="s2E-02-qVf"/>
                                 </constraints>
                                 <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="2jF-pq-6wi"/>
+                                    </mask>
                                     <mask key="constraints">
+                                        <exclude reference="2ic-ez-Jed"/>
+                                        <exclude reference="DGa-ec-3ZC"/>
                                         <exclude reference="MAN-Qi-Obe"/>
                                         <exclude reference="O11-R1-t9J"/>
                                     </mask>
@@ -149,14 +174,17 @@
                                 <variation key="heightClass=compact">
                                     <mask key="subviews">
                                         <exclude reference="pE3-xs-zf8"/>
+                                        <include reference="2jF-pq-6wi"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="7kx-Ev-kfx"/>
+                                        <include reference="2ic-ez-Jed"/>
+                                        <include reference="DGa-ec-3ZC"/>
+                                        <exclude reference="jJI-NC-tqG"/>
                                         <exclude reference="bET-EI-Pd9"/>
                                         <include reference="MAN-Qi-Obe"/>
                                         <include reference="O11-R1-t9J"/>
                                         <exclude reference="5Ha-jf-H0n"/>
-                                        <exclude reference="jJI-NC-tqG"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -177,6 +205,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Arrow Left" width="3.5" height="4.5"/>
         <image name="Arrow Up" width="4.5" height="3.5"/>
         <image name="Layout 1" width="27" height="27"/>
         <image name="Layout 2" width="27" height="27"/>
