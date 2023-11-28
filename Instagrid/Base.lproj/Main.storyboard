@@ -95,8 +95,8 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="tWp-3h-FyR">
-                                        <rect key="frame" x="48" y="545" width="278" height="80"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="tWp-3h-FyR" userLabel="SelectPicker">
+                                        <rect key="frame" x="48.5" y="525" width="278" height="80"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Layout 1" translatesAutoresizingMaskIntoConstraints="NO" id="t62-zE-XCl">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -125,23 +125,37 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.71764705882352942" green="0.84313725490196079" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="tWp-3h-FyR" secondAttribute="bottom" constant="42" id="5Ha-jf-H0n"/>
                                     <constraint firstItem="pE3-xs-zf8" firstAttribute="centerX" secondItem="T9j-Lg-boa" secondAttribute="centerX" id="7kx-Ev-kfx"/>
+                                    <constraint firstItem="tWp-3h-FyR" firstAttribute="centerY" secondItem="T9j-Lg-boa" secondAttribute="centerY" id="MAN-Qi-Obe"/>
+                                    <constraint firstAttribute="trailing" secondItem="tWp-3h-FyR" secondAttribute="trailing" constant="42" id="O11-R1-t9J"/>
                                     <constraint firstItem="w9v-mV-fji" firstAttribute="top" secondItem="T9j-Lg-boa" secondAttribute="top" constant="16" id="TlY-B1-nqO">
                                         <variation key="heightClass=compact" constant="8"/>
                                     </constraint>
                                     <constraint firstItem="w9v-mV-fji" firstAttribute="centerX" secondItem="T9j-Lg-boa" secondAttribute="centerX" id="Zgt-wh-jJA"/>
+                                    <constraint firstItem="tWp-3h-FyR" firstAttribute="centerX" secondItem="T9j-Lg-boa" secondAttribute="centerX" id="bET-EI-Pd9"/>
                                     <constraint firstItem="USG-bh-DUJ" firstAttribute="centerY" secondItem="T9j-Lg-boa" secondAttribute="centerY" id="d5F-jD-XXC">
                                         <variation key="heightClass=compact" constant="12"/>
                                     </constraint>
                                     <constraint firstItem="USG-bh-DUJ" firstAttribute="top" secondItem="pE3-xs-zf8" secondAttribute="bottom" constant="14" id="jJI-NC-tqG"/>
                                     <constraint firstItem="USG-bh-DUJ" firstAttribute="centerX" secondItem="T9j-Lg-boa" secondAttribute="centerX" id="s2E-02-qVf"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="MAN-Qi-Obe"/>
+                                        <exclude reference="O11-R1-t9J"/>
+                                    </mask>
+                                </variation>
                                 <variation key="heightClass=compact">
                                     <mask key="subviews">
                                         <exclude reference="pE3-xs-zf8"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="7kx-Ev-kfx"/>
+                                        <exclude reference="bET-EI-Pd9"/>
+                                        <include reference="MAN-Qi-Obe"/>
+                                        <include reference="O11-R1-t9J"/>
+                                        <exclude reference="5Ha-jf-H0n"/>
                                         <exclude reference="jJI-NC-tqG"/>
                                     </mask>
                                 </variation>
