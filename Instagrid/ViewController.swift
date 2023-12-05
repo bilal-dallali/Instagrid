@@ -17,7 +17,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        selected1.isOpaque = true
+        selected2.layer.opacity = 0
+        selected3.layer.opacity = 0
 
     }
 
