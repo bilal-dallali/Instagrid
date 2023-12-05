@@ -36,39 +36,58 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="USG-bh-DUJ" userLabel="MiddleView">
                                         <rect key="frame" x="37.5" y="173.5" width="300" height="300"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QYI-l3-4Ar">
-                                                <rect key="frame" x="158" y="15" width="127.5" height="127.5"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Plus" translatesAutoresizingMaskIntoConstraints="NO" id="tMH-UE-vPc">
-                                                        <rect key="frame" x="43" y="43" width="40" height="40"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    </imageView>
-                                                </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            </view>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qMv-SZ-gnZ">
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qMv-SZ-gnZ" userLabel="MiddleView1">
                                                 <rect key="frame" x="15" y="15" width="127.5" height="127.5"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Plus" translatesAutoresizingMaskIntoConstraints="NO" id="OqN-j8-snM">
-                                                        <rect key="frame" x="43" y="43" width="40" height="40"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Plus" translatesAutoresizingMaskIntoConstraints="NO" id="1Rh-Sh-z8E" userLabel="PlusMiddleView1">
+                                                        <rect key="frame" x="44" y="44" width="40" height="40"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ss7-4k-zxY">
-                                                <rect key="frame" x="15" y="158" width="270" height="127.5"/>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QYI-l3-4Ar" userLabel="MiddleView2">
+                                                <rect key="frame" x="158" y="15" width="127.5" height="127.5"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Plus" translatesAutoresizingMaskIntoConstraints="NO" id="YNs-vY-uvJ">
-                                                        <rect key="frame" x="115" y="43" width="40" height="40"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Plus" translatesAutoresizingMaskIntoConstraints="NO" id="7h3-hW-a9K" userLabel="PlusMiddleView2">
+                                                        <rect key="frame" x="44" y="44" width="40" height="40"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ss7-4k-zxY" userLabel="MiddleView3">
+                                                <rect key="frame" x="15" y="157.5" width="127.5" height="127.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Plus" translatesAutoresizingMaskIntoConstraints="NO" id="Qst-iq-ZdW" userLabel="PlusMiddleView3">
+                                                        <rect key="frame" x="44" y="43" width="40" height="40"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="87i-m4-cRg" userLabel="MiddleView4">
+                                                <rect key="frame" x="158" y="157.5" width="127.5" height="127.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Plus" translatesAutoresizingMaskIntoConstraints="NO" id="cCS-Ob-N7l" userLabel="PlusMiddleView4">
+                                                        <rect key="frame" x="44" y="43" width="40" height="40"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Plus" translatesAutoresizingMaskIntoConstraints="NO" id="wBa-q8-Zjq" userLabel="PlusMiddleViewTop">
+                                                <rect key="frame" x="130" y="59" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Plus" translatesAutoresizingMaskIntoConstraints="NO" id="f9A-Tx-HbV" userLabel="PlusMiddleViewBottom">
+                                                <rect key="frame" x="130" y="201" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.062745098039215685" green="0.40000000000000002" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -250,8 +269,8 @@
                                         <include reference="2jF-pq-6wi"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="7kx-Ev-kfx"/>
                                         <include reference="2ic-ez-Jed"/>
+                                        <exclude reference="7kx-Ev-kfx"/>
                                         <include reference="DGa-ec-3ZC"/>
                                         <exclude reference="jJI-NC-tqG"/>
                                         <exclude reference="bET-EI-Pd9"/>
@@ -272,6 +291,16 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="middleView1" destination="qMv-SZ-gnZ" id="Cdj-Ci-0f4"/>
+                        <outlet property="middleView2" destination="QYI-l3-4Ar" id="fhc-9p-DI7"/>
+                        <outlet property="middleView3" destination="Ss7-4k-zxY" id="lDM-Hm-1f7"/>
+                        <outlet property="middleView4" destination="87i-m4-cRg" id="PvS-Tp-uFe"/>
+                        <outlet property="plusMiddleView1" destination="1Rh-Sh-z8E" id="FDP-il-oDH"/>
+                        <outlet property="plusMiddleView2" destination="7h3-hW-a9K" id="FfV-Hi-uAS"/>
+                        <outlet property="plusMiddleView3" destination="Qst-iq-ZdW" id="Sua-ZU-d6t"/>
+                        <outlet property="plusMiddleView4" destination="cCS-Ob-N7l" id="hLn-Iv-I6q"/>
+                        <outlet property="plusMiddleViewBottom" destination="f9A-Tx-HbV" id="fPG-hl-0Ge"/>
+                        <outlet property="plusMiddleViewTop" destination="wBa-q8-Zjq" id="gTb-EP-sl8"/>
                         <outlet property="selected1" destination="ijZ-8Z-f56" id="GBH-Jx-ttJ"/>
                         <outlet property="selected2" destination="MPe-7e-qOB" id="aUQ-V9-N0x"/>
                         <outlet property="selected3" destination="JNZ-Bq-aGx" id="P2B-nK-1m9"/>
