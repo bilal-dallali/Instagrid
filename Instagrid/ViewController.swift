@@ -9,10 +9,15 @@ import UIKit
 //import PhotosUI
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var selected1: UIImageView!
+    @IBOutlet weak var selected2: UIImageView!
+    @IBOutlet weak var selected3: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        selected1.isOpaque = true
 
     }
 

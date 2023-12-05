@@ -28,7 +28,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9v-mV-fji">
-                                        <rect key="frame" x="136" y="16" width="103" height="34"/>
+                                        <rect key="frame" x="137" y="16" width="101.5" height="30.5"/>
                                         <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="26"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -98,27 +98,78 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="tWp-3h-FyR" userLabel="SelectPicker">
                                         <rect key="frame" x="48.5" y="525" width="278" height="80"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Layout 1" translatesAutoresizingMaskIntoConstraints="NO" id="t62-zE-XCl">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="svT-HP-MNO" userLabel="View1">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Layout 1" translatesAutoresizingMaskIntoConstraints="NO" id="t62-zE-XCl">
+                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="OmG-PZ-VLq" userLabel="Selected1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="80" id="Dfp-eH-XDn"/>
-                                                    <constraint firstAttribute="height" constant="80" id="bAG-67-BLQ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="t62-zE-XCl" secondAttribute="trailing" id="2nh-6v-m9M"/>
+                                                    <constraint firstAttribute="height" constant="80" id="BtL-hh-E04"/>
+                                                    <constraint firstItem="OmG-PZ-VLq" firstAttribute="top" secondItem="svT-HP-MNO" secondAttribute="top" id="EwJ-77-l82"/>
+                                                    <constraint firstItem="OmG-PZ-VLq" firstAttribute="leading" secondItem="svT-HP-MNO" secondAttribute="leading" id="IVk-gC-th3"/>
+                                                    <constraint firstAttribute="trailing" secondItem="OmG-PZ-VLq" secondAttribute="trailing" id="LWn-tl-0PW"/>
+                                                    <constraint firstAttribute="width" constant="80" id="Oca-kt-lDl"/>
+                                                    <constraint firstItem="t62-zE-XCl" firstAttribute="leading" secondItem="svT-HP-MNO" secondAttribute="leading" id="Rdy-ek-acW"/>
+                                                    <constraint firstItem="t62-zE-XCl" firstAttribute="top" secondItem="svT-HP-MNO" secondAttribute="top" id="f8t-x9-PuA"/>
+                                                    <constraint firstAttribute="bottom" secondItem="OmG-PZ-VLq" secondAttribute="bottom" id="hUO-hB-HJg"/>
+                                                    <constraint firstAttribute="bottom" secondItem="t62-zE-XCl" secondAttribute="bottom" id="vTJ-2e-leb"/>
                                                 </constraints>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Layout 2" translatesAutoresizingMaskIntoConstraints="NO" id="17x-5C-GrZ">
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="awi-LD-SRy" userLabel="View2">
                                                 <rect key="frame" x="99" y="0.0" width="80" height="80"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Layout 2" translatesAutoresizingMaskIntoConstraints="NO" id="17x-5C-GrZ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="MPe-7e-qOB" userLabel="Selected2">
+                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="80" id="SMf-bF-q8q"/>
-                                                    <constraint firstAttribute="height" constant="80" id="duV-zp-85g"/>
+                                                    <constraint firstItem="MPe-7e-qOB" firstAttribute="top" secondItem="awi-LD-SRy" secondAttribute="top" id="Fg6-es-x4d"/>
+                                                    <constraint firstItem="MPe-7e-qOB" firstAttribute="leading" secondItem="awi-LD-SRy" secondAttribute="leading" id="N3F-Rs-aQE"/>
+                                                    <constraint firstItem="17x-5C-GrZ" firstAttribute="top" secondItem="awi-LD-SRy" secondAttribute="top" id="NYg-2T-Ppe"/>
+                                                    <constraint firstAttribute="bottom" secondItem="MPe-7e-qOB" secondAttribute="bottom" id="O6C-D0-CHa"/>
+                                                    <constraint firstAttribute="width" constant="80" id="Sbi-ck-1l5"/>
+                                                    <constraint firstAttribute="height" constant="80" id="Xui-vT-a4E"/>
+                                                    <constraint firstAttribute="trailing" secondItem="MPe-7e-qOB" secondAttribute="trailing" id="ewy-Zp-8CY"/>
+                                                    <constraint firstItem="17x-5C-GrZ" firstAttribute="leading" secondItem="awi-LD-SRy" secondAttribute="leading" id="iWa-Wq-zjt"/>
+                                                    <constraint firstAttribute="bottom" secondItem="17x-5C-GrZ" secondAttribute="bottom" id="rpc-hx-fuQ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="17x-5C-GrZ" secondAttribute="trailing" id="xV0-Yk-CaD"/>
                                                 </constraints>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Layout 3" translatesAutoresizingMaskIntoConstraints="NO" id="ErU-3W-ge7">
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sth-n6-jxv" userLabel="View3">
                                                 <rect key="frame" x="198" y="0.0" width="80" height="80"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Layout 3" translatesAutoresizingMaskIntoConstraints="NO" id="ErU-3W-ge7">
+                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="JNZ-Bq-aGx" userLabel="Selected3">
+                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="80" id="8DC-qG-VrB"/>
-                                                    <constraint firstAttribute="height" constant="80" id="uPY-Dh-GlX"/>
+                                                    <constraint firstAttribute="height" constant="80" id="8eS-8b-R5g"/>
+                                                    <constraint firstItem="ErU-3W-ge7" firstAttribute="leading" secondItem="sth-n6-jxv" secondAttribute="leading" id="E0e-8K-rsC"/>
+                                                    <constraint firstAttribute="trailing" secondItem="JNZ-Bq-aGx" secondAttribute="trailing" id="Uaa-1K-yk6"/>
+                                                    <constraint firstItem="JNZ-Bq-aGx" firstAttribute="leading" secondItem="sth-n6-jxv" secondAttribute="leading" id="WNp-ZX-UKd"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ErU-3W-ge7" secondAttribute="trailing" id="Z8c-BA-f6S"/>
+                                                    <constraint firstItem="JNZ-Bq-aGx" firstAttribute="top" secondItem="sth-n6-jxv" secondAttribute="top" id="ZMg-AM-cLt"/>
+                                                    <constraint firstItem="ErU-3W-ge7" firstAttribute="top" secondItem="sth-n6-jxv" secondAttribute="top" id="n9w-Vc-1O5"/>
+                                                    <constraint firstAttribute="bottom" secondItem="JNZ-Bq-aGx" secondAttribute="bottom" id="puq-pu-mn3"/>
+                                                    <constraint firstAttribute="width" constant="80" id="xPw-OS-UNd"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ErU-3W-ge7" secondAttribute="bottom" id="yU0-eS-KFY"/>
                                                 </constraints>
-                                            </imageView>
+                                            </view>
                                         </subviews>
                                         <variation key="heightClass=compact" axis="vertical"/>
                                     </stackView>
@@ -177,8 +228,8 @@
                                         <include reference="2jF-pq-6wi"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="7kx-Ev-kfx"/>
                                         <include reference="2ic-ez-Jed"/>
+                                        <exclude reference="7kx-Ev-kfx"/>
                                         <include reference="DGa-ec-3ZC"/>
                                         <exclude reference="jJI-NC-tqG"/>
                                         <exclude reference="bET-EI-Pd9"/>
@@ -198,6 +249,11 @@
                             <constraint firstItem="T9j-Lg-boa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qhR-cL-mTJ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="selected1" destination="OmG-PZ-VLq" id="Z7v-pi-jqC"/>
+                        <outlet property="selected2" destination="MPe-7e-qOB" id="aUQ-V9-N0x"/>
+                        <outlet property="selected3" destination="JNZ-Bq-aGx" id="P2B-nK-1m9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -211,6 +267,7 @@
         <image name="Layout 2" width="27" height="27"/>
         <image name="Layout 3" width="27" height="27"/>
         <image name="Plus" width="13.5" height="13.5"/>
+        <image name="Selected" width="27" height="27"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
