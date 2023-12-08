@@ -31,22 +31,19 @@ class ViewController: UIViewController {
     @IBAction func selectLayout1(_ sender: UIButton) {
         //sender.isSelected = true
         //sender.isSelected.toggle()
-        selected1.layer.opacity = 1
-        selected2.layer.opacity = 0
-        selected3.layer.opacity = 0
+        
         setLayer1()
     }
     
     @IBAction func selectLayout2(_ sender: UIButton) {
-        selected1.layer.opacity = 0
-        selected2.layer.opacity = 1
-        selected3.layer.opacity = 0
+        setLayer2()
     }
     
     @IBAction func selectLayout3(_ sender: UIButton) {
         selected1.layer.opacity = 0
         selected2.layer.opacity = 0
         selected3.layer.opacity = 1
+        resetLayers()
     }
     
     
@@ -56,13 +53,43 @@ class ViewController: UIViewController {
         setLayer1()
     }
     
+    func resetLayers() {
+        middleView1.frame = CGRect(x: middleView1.frame.origin.x, y: middleView1.frame.origin.y, width: 127.5, height: middleView1.frame.size.height)
+        middleView3.frame = CGRect(x: middleView3.frame.origin.x, y: middleView3.frame.origin.y, width: 127.5, height: middleView3.frame.size.height)
+        middleView2.layer.opacity = 1
+        middleView4.layer.opacity = 1
+        plusMiddleViewTop.layer.opacity = 0
+        plusMiddleViewBottom.layer.opacity = 0
+        plusMiddleView1.layer.opacity = 1
+        plusMiddleView2.layer.opacity = 1
+        plusMiddleView3.layer.opacity = 1
+        plusMiddleView4.layer.opacity = 1
+    }
+    
     func setLayer1() {
+        resetLayers()
+        selected1.layer.opacity = 1
         selected2.layer.opacity = 0
         selected3.layer.opacity = 0
+        
         middleView1.frame = CGRect(x: middleView1.frame.origin.x, y: middleView1.frame.origin.y, width: 270, height: middleView1.frame.size.height)
+        plusMiddleViewTop.layer.opacity = 1
         middleView2.layer.opacity = 0
         plusMiddleView1.layer.opacity = 0
         plusMiddleViewBottom.layer.opacity = 0
+    }
+    
+    func setLayer2() {
+        resetLayers()
+        selected1.layer.opacity = 0
+        selected2.layer.opacity = 1
+        selected3.layer.opacity = 0
+        
+        
+        middleView3.frame = CGRect(x: middleView3.frame.origin.x, y: middleView3.frame.origin.y, width: 270, height: middleView3.frame.size.height)
+        plusMiddleView3.layer.opacity = 0
+        plusMiddleView4.layer.opacity = 0
+        plusMiddleViewBottom.layer.opacity = 1
     }
     
 }
