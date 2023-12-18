@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -40,12 +40,16 @@
                                                 <rect key="frame" x="15" y="15" width="127.5" height="127.5"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Plus" translatesAutoresizingMaskIntoConstraints="NO" id="1Rh-Sh-z8E" userLabel="PlusMiddleView1">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Plus" translatesAutoresizingMaskIntoConstraints="NO" id="oUz-xb-Jgd" userLabel="PlusMiddleView1">
                                                         <rect key="frame" x="44" y="44" width="40" height="40"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="cIA-NE-jhe" appends="YES" id="KrW-oF-3Dw"/>
+                                                </connections>
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QYI-l3-4Ar" userLabel="MiddleView2">
                                                 <rect key="frame" x="158" y="15" width="127.5" height="127.5"/>
@@ -295,7 +299,7 @@
                         <outlet property="middleView2" destination="QYI-l3-4Ar" id="fhc-9p-DI7"/>
                         <outlet property="middleView3" destination="Ss7-4k-zxY" id="lDM-Hm-1f7"/>
                         <outlet property="middleView4" destination="87i-m4-cRg" id="PvS-Tp-uFe"/>
-                        <outlet property="plusMiddleView1" destination="1Rh-Sh-z8E" id="FDP-il-oDH"/>
+                        <outlet property="plusMiddleView1" destination="oUz-xb-Jgd" id="ytN-OW-CFn"/>
                         <outlet property="plusMiddleView2" destination="7h3-hW-a9K" id="FfV-Hi-uAS"/>
                         <outlet property="plusMiddleView3" destination="Qst-iq-ZdW" id="Sua-ZU-d6t"/>
                         <outlet property="plusMiddleView4" destination="cCS-Ob-N7l" id="hLn-Iv-I6q"/>
@@ -307,6 +311,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="cIA-NE-jhe"/>
             </objects>
             <point key="canvasLocation" x="124" y="-32.833583208395808"/>
         </scene>
