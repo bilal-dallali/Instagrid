@@ -6,11 +6,8 @@
 //
 
 import UIKit
-//import PhotosUI
 
 class ViewController: UIViewController, UINavigationControllerDelegate {
-    
-    
     
     @IBOutlet weak var selected1: UIImageView!
     @IBOutlet weak var selected2: UIImageView!
@@ -31,11 +28,13 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     @IBOutlet weak var plusMiddleViewTop: UIImageView!
     @IBOutlet weak var plusMiddleViewBottom: UIImageView!
     
-    @objc func importPicture() {
-        let picker = UIImagePickerController()
-        picker.delegate = self
-        present(picker, animated: true)
-    }
+    var selectedView: UIView?
+    
+//    @objc func importPicture() {
+//        let picker = UIImagePickerController()
+//        picker.delegate = self
+//        present(picker, animated: true)
+//    }
     
     @IBAction func selectLayout1(_ sender: UIButton) {
         //sender.isSelected = true
@@ -61,10 +60,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         // Do any additional setup after loading the view.
         setLayer1()
         
-        setupTapGesture(for: middleView1, action: #selector(middleView1Tapped))
-        setupTapGesture(for: middleView2, action: #selector(middleView2Tapped))
-        setupTapGesture(for: middleView3, action: #selector(middleView3Tapped))
-        setupTapGesture(for: middleView4, action: #selector(middleView4Tapped))
+        setupTapGesture(for: middleView1, action: #selector(viewTapped))
+        setupTapGesture(for: middleView2, action: #selector(viewTapped))
+        setupTapGesture(for: middleView3, action: #selector(viewTapped))
+        setupTapGesture(for: middleView4, action: #selector(viewTapped))
     }
     
     func setupTapGesture(for view: UIView, action: Selector) {
@@ -132,13 +131,31 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         plusMiddleViewBottom.layer.opacity = 1
     }
     
+    @objc func viewTapped(gesture: UITapGestureRecognizer) {
+        if let view = gesture.view {
+            selectedView = view
+            importPicture()
+        }
+    }
+    
+    func importPicture() {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.sourceType = .photoLibrary
+        present(picker, animated: true)
+    }
+    
 }
 
 extension ViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
+        if let selectedImage = info[.originalImage] as? UIImage {
+            (selectedView?.subviews.first as? UIImageView)?.image = selectedImage
+        }
+        dismiss(animated: true, completion: nil)
     }
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        
+        dismiss(animated: true, completion: nil)
     }
 }
