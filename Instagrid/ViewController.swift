@@ -67,6 +67,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         setupTapGesture(for: middleView2, action: #selector(viewTapped))
         setupTapGesture(for: middleView3, action: #selector(viewTapped))
         setupTapGesture(for: middleView4, action: #selector(viewTapped))
+
     }
     
     func setupTapGesture(for view: UIView, action: Selector) {
@@ -75,25 +76,21 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         view.isUserInteractionEnabled = true
     }
     
-    @objc func middleView1Tapped() {
-        print("middleView1 a été tapé")
-        // Ajoutez ici le code pour gérer le tap sur middleView1
-    }
-    
-    @objc func middleView2Tapped() {
-        print("middleView2 a été tapé")
-        // Ajoutez ici le code pour gérer le tap sur middleView2
-    }
-    
-    @objc func middleView3Tapped() {
-        print("middleView3 a été tapé")
-        // Ajoutez ici le code pour gérer le tap sur middleView3
-    }
-    
-    @objc func middleView4Tapped() {
-        print("middleView4 a été tapé")
-        // Ajoutez ici le code pour gérer le tap sur middleView4
-    }
+//    @objc func middleView1Tapped() {
+//        print("middleView1 a été tapé")
+//    }
+//    
+//    @objc func middleView2Tapped() {
+//        print("middleView2 a été tapé")
+//    }
+//    
+//    @objc func middleView3Tapped() {
+//        print("middleView3 a été tapé")
+//    }
+//    
+//    @objc func middleView4Tapped() {
+//        print("middleView4 a été tapé")
+//    }
     
     func resetLayers() {
         middleView1.frame = CGRect(x: middleView1.frame.origin.x, y: middleView1.frame.origin.y, width: 127.5, height: middleView1.frame.size.height)
@@ -152,8 +149,18 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
 
 extension ViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let selectedImage = info[.originalImage] as? UIImage {
-            (selectedView?.subviews.first as? UIImageView)?.image = selectedImage
+        if let selectedImage = info[.originalImage] as? UIImage, let view = selectedView {
+            // CRéer imageView
+            let imageView = UIImageView(image: selectedImage)
+            imageView.contentMode = .scaleAspectFill //scaleAspectFit
+            imageView.clipsToBounds = true
+            //(selectedView?.subviews.first as? UIImageView)?.image = selectedImage
+            
+            //Ajuster la taille et position de l'imageView
+            imageView.frame = view.bounds
+            
+            //Ajouter l'imageView comme sous-vue de la middleView
+            view.addSubview(imageView)
         }
         dismiss(animated: true, completion: nil)
     }
