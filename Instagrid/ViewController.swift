@@ -9,6 +9,12 @@ import UIKit
 
 class ViewController: UIViewController, UINavigationControllerDelegate {
     
+    
+    @IBOutlet weak var instagridFont: UILabel!
+    @IBOutlet weak var swipeUpFont: UILabel!
+    @IBOutlet weak var swipeLeftFont: UILabel!
+    
+    
     @IBOutlet weak var selected1: UIImageView!
     @IBOutlet weak var selected2: UIImageView!
     @IBOutlet weak var selected3: UIImageView!
@@ -29,12 +35,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     @IBOutlet weak var plusMiddleViewBottom: UIImageView!
     
     var selectedView: UIView?
-    
-//    @objc func importPicture() {
-//        let picker = UIImagePickerController()
-//        picker.delegate = self
-//        present(picker, animated: true)
-//    }
     
     @IBAction func selectLayout1(_ sender: UIButton) {
         //sender.isSelected = true
@@ -58,6 +58,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        instagridFont.font = UIFont(name: "ThirstySoftRegular", size: 30)
+        swipeUpFont.font = UIFont(name: "Delm-Medium", size: 26)
+        swipeLeftFont.font = UIFont(name: "Delm-Medium", size: 26)
         setLayer1()
         
         setupTapGesture(for: middleView1, action: #selector(viewTapped))

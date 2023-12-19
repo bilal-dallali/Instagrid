@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -21,20 +21,20 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Instagrid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T9j-Lg-boa" userLabel="MainView">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9v-mV-fji">
-                                        <rect key="frame" x="137" y="16" width="101.5" height="30.5"/>
+                                        <rect key="frame" x="282" y="8" width="103" height="34"/>
                                         <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="26"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="USG-bh-DUJ" userLabel="MiddleView">
-                                        <rect key="frame" x="37.5" y="173.5" width="300" height="300"/>
+                                        <rect key="frame" x="183.5" y="49.5" width="300" height="300"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qMv-SZ-gnZ" userLabel="MiddleView1">
                                                 <rect key="frame" x="15" y="15" width="127.5" height="127.5"/>
@@ -119,7 +119,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="tWp-3h-FyR" userLabel="SelectPicker">
-                                        <rect key="frame" x="48.5" y="525" width="278" height="80"/>
+                                        <rect key="frame" x="545" y="48.5" width="80" height="278"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="svT-HP-MNO" userLabel="View1">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -154,7 +154,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="awi-LD-SRy" userLabel="View2">
-                                                <rect key="frame" x="99" y="0.0" width="80" height="80"/>
+                                                <rect key="frame" x="0.0" y="99" width="80" height="80"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vn-77-ZWY">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -185,7 +185,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sth-n6-jxv" userLabel="View3">
-                                                <rect key="frame" x="198" y="0.0" width="80" height="80"/>
+                                                <rect key="frame" x="0.0" y="198" width="80" height="80"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdz-qp-Nhd">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -295,6 +295,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="instagridFont" destination="w9v-mV-fji" id="rsx-7K-VNv"/>
                         <outlet property="middleView1" destination="qMv-SZ-gnZ" id="Cdj-Ci-0f4"/>
                         <outlet property="middleView2" destination="QYI-l3-4Ar" id="fhc-9p-DI7"/>
                         <outlet property="middleView3" destination="Ss7-4k-zxY" id="lDM-Hm-1f7"/>
@@ -308,6 +309,8 @@
                         <outlet property="selected1" destination="ijZ-8Z-f56" id="GBH-Jx-ttJ"/>
                         <outlet property="selected2" destination="MPe-7e-qOB" id="aUQ-V9-N0x"/>
                         <outlet property="selected3" destination="JNZ-Bq-aGx" id="P2B-nK-1m9"/>
+                        <outlet property="swipeLeftFont" destination="JSq-9A-ntr" id="LnK-Zi-jYm"/>
+                        <outlet property="swipeUpFont" destination="McY-Tt-xu1" id="8EH-hT-93k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
