@@ -95,8 +95,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     func resetLayers() {
         middleView1.frame = CGRect(x: middleView1.frame.origin.x, y: middleView1.frame.origin.y, width: 127.5, height: middleView1.frame.size.height)
         middleView3.frame = CGRect(x: middleView3.frame.origin.x, y: middleView3.frame.origin.y, width: 127.5, height: middleView3.frame.size.height)
-        middleView2.layer.opacity = 1
-        middleView4.layer.opacity = 1
+        middleView2.isHidden = false
+        middleView4.isHidden = false
+        
+//        middleView2.isUserInteractionEnabled = true
+//        middleView4.isUserInteractionEnabled = true
+        
         plusMiddleViewTop.layer.opacity = 0
         plusMiddleViewBottom.layer.opacity = 0
         plusMiddleView1.layer.opacity = 1
@@ -113,7 +117,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         
         middleView1.frame = CGRect(x: middleView1.frame.origin.x, y: middleView1.frame.origin.y, width: 270, height: middleView1.frame.size.height)
         plusMiddleViewTop.layer.opacity = 1
-        middleView2.layer.opacity = 0
+        middleView2.isHidden = true
+        
+        //middleView2.isUserInteractionEnabled = true
+        
         plusMiddleView1.layer.opacity = 0
         plusMiddleViewBottom.layer.opacity = 0
     }
@@ -129,6 +136,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         plusMiddleView3.layer.opacity = 0
         plusMiddleView4.layer.opacity = 0
         plusMiddleViewBottom.layer.opacity = 1
+        
+        middleView4.isHidden = true
+        //middleView4.isUserInteractionEnabled = true
     }
     
     @objc func viewTapped(gesture: UITapGestureRecognizer) {
