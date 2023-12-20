@@ -149,6 +149,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     func removeAllImportedImages() {
+        plusMiddleViewTop.isHidden = false
+        plusMiddleViewBottom.isHidden = false
         let middleViews = [middleView1, middleView2, middleView3, middleView4]
         
         for middleView in middleViews {
@@ -193,6 +195,16 @@ extension ViewController: UIImagePickerControllerDelegate {
             
             //Ajouter l'imageView comme sous-vue de la middleView
             view.addSubview(imageView)
+            
+            // Masquer plusMiddleViewTop si l'image est ajoutée à middleView1
+            if view == middleView1 {
+                plusMiddleViewTop.isHidden = true
+            }
+            
+            // Masquer plusMiddleViewBottom si l'image est ajoutée à middleView3
+            if view == middleView3 {
+                plusMiddleViewBottom.isHidden = true
+            }
         }
         dismiss(animated: true, completion: nil)
     }
