@@ -70,27 +70,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
 
     }
     
+    
     func setupTapGesture(for view: UIView, action: Selector) {
         let tapGesture = UITapGestureRecognizer(target: self, action: action)
         view.addGestureRecognizer(tapGesture)
         view.isUserInteractionEnabled = true
     }
-    
-//    @objc func middleView1Tapped() {
-//        print("middleView1 a été tapé")
-//    }
-//    
-//    @objc func middleView2Tapped() {
-//        print("middleView2 a été tapé")
-//    }
-//    
-//    @objc func middleView3Tapped() {
-//        print("middleView3 a été tapé")
-//    }
-//    
-//    @objc func middleView4Tapped() {
-//        print("middleView4 a été tapé")
-//    }
     
     func resetLayers() {
         middleView1.frame = CGRect(x: middleView1.frame.origin.x, y: middleView1.frame.origin.y, width: 127.5, height: middleView1.frame.size.height)
@@ -107,6 +92,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         plusMiddleView2.layer.opacity = 1
         plusMiddleView3.layer.opacity = 1
         plusMiddleView4.layer.opacity = 1
+        
+        // Ajuster la taille des images pour toutes les middleViews
+        adjustImportedImageSize(in: middleView1)
+        adjustImportedImageSize(in: middleView2)
+        adjustImportedImageSize(in: middleView3)
+        adjustImportedImageSize(in: middleView4)
     }
     
     func setLayer1() {
@@ -116,11 +107,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         selected3.layer.opacity = 0
         
         middleView1.frame = CGRect(x: middleView1.frame.origin.x, y: middleView1.frame.origin.y, width: 270, height: middleView1.frame.size.height)
+        
+        adjustImportedImageSize(in: middleView1)
+        
         plusMiddleViewTop.layer.opacity = 1
         middleView2.isHidden = true
-        
         //middleView2.isUserInteractionEnabled = true
-        
         plusMiddleView1.layer.opacity = 0
         plusMiddleViewBottom.layer.opacity = 0
     }
@@ -133,12 +125,21 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         
         
         middleView3.frame = CGRect(x: middleView3.frame.origin.x, y: middleView3.frame.origin.y, width: 270, height: middleView3.frame.size.height)
+        adjustImportedImageSize(in: middleView3)
         plusMiddleView3.layer.opacity = 0
         plusMiddleView4.layer.opacity = 0
         plusMiddleViewBottom.layer.opacity = 1
         
         middleView4.isHidden = true
         //middleView4.isUserInteractionEnabled = true
+    }
+    
+    func adjustImportedImageSize(in view: UIView) {
+        for subview in view.subviews {
+            if let imageView = subview as? UIImageView {
+                imageView.frame = view.bounds
+            }
+        }
     }
     
     @objc func viewTapped(gesture: UITapGestureRecognizer) {
