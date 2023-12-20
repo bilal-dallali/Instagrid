@@ -136,7 +136,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     
     func adjustImportedImageSize(in view: UIView) {
         for subview in view.subviews {
-            if let imageView = subview as? UIImageView {
+            if let imageView = subview as? UIImageView, imageView.tag == 100 {
                 imageView.frame = view.bounds
             }
         }
@@ -163,12 +163,14 @@ extension ViewController: UIImagePickerControllerDelegate {
         if let selectedImage = info[.originalImage] as? UIImage, let view = selectedView {
             // CRéer imageView
             let imageView = UIImageView(image: selectedImage)
-            imageView.contentMode = .scaleAspectFill //scaleAspectFit
+            imageView.contentMode = .scaleAspectFit //scaleAspectFit
             imageView.clipsToBounds = true
             //(selectedView?.subviews.first as? UIImageView)?.image = selectedImage
             
             //Ajuster la taille et position de l'imageView
             imageView.frame = view.bounds
+            imageView.tag = 100
+            view.addSubview(imageView)
             
             //Ajouter l'imageView comme sous-vue de la middleView
             view.addSubview(imageView)
