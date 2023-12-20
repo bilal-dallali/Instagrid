@@ -98,6 +98,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         adjustImportedImageSize(in: middleView2)
         adjustImportedImageSize(in: middleView3)
         adjustImportedImageSize(in: middleView4)
+        
+        removeAllImportedImages()
     }
     
     func setLayer1() {
@@ -115,6 +117,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         //middleView2.isUserInteractionEnabled = true
         plusMiddleView1.layer.opacity = 0
         plusMiddleViewBottom.layer.opacity = 0
+        
+        removeAllImportedImages()
     }
     
     func setLayer2() {
@@ -132,12 +136,27 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         
         middleView4.isHidden = true
         //middleView4.isUserInteractionEnabled = true
+        
+        removeAllImportedImages()
     }
     
     func adjustImportedImageSize(in view: UIView) {
         for subview in view.subviews {
             if let imageView = subview as? UIImageView, imageView.tag == 100 {
                 imageView.frame = view.bounds
+            }
+        }
+    }
+    
+    func removeAllImportedImages() {
+        let middleViews = [middleView1, middleView2, middleView3, middleView4]
+        
+        for middleView in middleViews {
+            // Supprimons toutes les sous-vues
+            middleView?.subviews.forEach { subview in
+                if subview.tag == 100 {
+                    subview.removeFromSuperview()
+                }
             }
         }
     }
