@@ -34,6 +34,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     @IBOutlet weak var plusMiddleViewTop: UIImageView!
     @IBOutlet weak var plusMiddleViewBottom: UIImageView!
     
+    
+    @IBOutlet weak var mainMiddleview: UIView!
+    
     var selectedView: UIView?
     
     @IBAction func selectLayout1(_ sender: UIButton) {
@@ -52,6 +55,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         selected2.layer.opacity = 0
         selected3.layer.opacity = 1
         resetLayers()
+    }
+    
+    @IBAction func upGesture(_ sender: Any) {
+        shareMiddleViewScreenShot()
     }
     
     
@@ -177,6 +184,55 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         present(picker, animated: true)
     }
     
+    func shareMiddleViewScreenShot() {
+        print("screenshot")
+    }
+    /*
+    func shareMiddleViewScreenShot() {
+        let renderer = UIGraphicsRenderer(size: mainMiddleview.bounds.size)
+        let image = renderer.image { ctx in
+            mainMiddleview.drawHierarchy(in: mainMiddleview.bounds, afterScreenUpdates: true)
+        }
+
+        // Partager l'image
+        let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+
+        // Si vous utilisez un iPad, vous devez fournir un point d'ancrage pour le popover
+        if let popoverController = activityViewController.popoverPresentationController {
+            popoverController.sourceView = self.view
+            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+            popoverController.permittedArrowDirections = []
+        }
+
+        // Présenter le UIActivityViewController
+        DispatchQueue.main.async {
+            self.present(activityViewController, animated: true, completion: nil)
+        }
+    }
+*/
+    
+//    func shareMiddleViewScreenShot() {
+//        print("screenshot")
+//        let renderer = UIGraphicsRenderer(size: mainMiddleview.bounds.size)
+//        let image = renderer.image { ctx in
+//            mainMiddleview.drawHierarchy(in: mainMiddleview.bounds, afterScreenUpdates: true)
+//        }
+//    }
+    
+//    func shareMiddleViewScreenShot() {
+//        let renderer = UIGraphicsRenderer(size: mainMiddleview.bounds.size)
+//        let image = renderer.image { ctx in
+//            mainMiddleview.drawHierarchy(in: mainMiddleview.bounds, afterScreenUpdates: true)
+//        }
+//
+//        // Partager l'image
+//        let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+//
+//        // Présenter le UIActivityViewController
+//        DispatchQueue.main.async {
+//            self.present(activityViewController, animated: true, completion: nil)
+//        }
+//    }
 }
 
 extension ViewController: UIImagePickerControllerDelegate {

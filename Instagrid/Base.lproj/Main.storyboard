@@ -94,11 +94,15 @@
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.062745098039215685" green="0.40000000000000002" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="7BH-hh-4qY"/>
                                             <constraint firstAttribute="height" constant="300" id="99W-FG-4mK"/>
                                             <constraint firstAttribute="width" secondItem="USG-bh-DUJ" secondAttribute="height" multiplier="1:1" id="bJY-Ur-en6"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="MfW-6p-yoy" appends="YES" id="Ipe-DY-aDp"/>
+                                        </connections>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="pE3-xs-zf8" userLabel="SwipeUp">
                                         <rect key="frame" x="107.5" y="118" width="160.5" height="41.5"/>
@@ -296,6 +300,7 @@
                     </view>
                     <connections>
                         <outlet property="instagridFont" destination="w9v-mV-fji" id="rsx-7K-VNv"/>
+                        <outlet property="mainMiddleview" destination="USG-bh-DUJ" id="zhf-hm-LDN"/>
                         <outlet property="middleView1" destination="qMv-SZ-gnZ" id="Cdj-Ci-0f4"/>
                         <outlet property="middleView2" destination="QYI-l3-4Ar" id="fhc-9p-DI7"/>
                         <outlet property="middleView3" destination="Ss7-4k-zxY" id="lDM-Hm-1f7"/>
@@ -315,6 +320,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="cIA-NE-jhe"/>
+                <swipeGestureRecognizer direction="up" id="MfW-6p-yoy">
+                    <connections>
+                        <action selector="upGesture:" destination="BYZ-38-t0r" id="RdL-Mh-TfH"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="124" y="-32.833583208395808"/>
         </scene>
