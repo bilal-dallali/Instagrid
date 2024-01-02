@@ -60,7 +60,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     
 //    @IBAction func upGesture(_ sender: Any) {
 //        shareMiddleViewScreenShot()
-//    }
+    //    }
     
     
     override func viewDidLoad() {
@@ -79,19 +79,54 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         view.addSubview(mainView)
         
         // Initialize swipe gesture recognizer
-        let swipeGestureRecognizerUp = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
+        let swipeUpGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
         
         // Configure swipe gesture recognizer
-        swipeGestureRecognizerUp.direction = .up
+        swipeUpGestureRecognizer.direction = .up
         
         //Add swipe gesture recognizer
-        mainView.addGestureRecognizer(swipeGestureRecognizerUp)
+        mainView.addGestureRecognizer(swipeUpGestureRecognizer)
         
-
+        // Initialize swipe gesture recognizer
+        let swipeLeftGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
+        
+        // Configure swipe gesture recognizer
+        swipeLeftGestureRecognizer.direction = .left
+        
+        //Add swipe gesture recognizer
+        mainView.addGestureRecognizer(swipeLeftGestureRecognizer)
+        
+        updateGestureRecognizers()
+        
+        
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: { _ in
+            self.updateGestureRecognizers()
+        }, completion: nil)
+    }
+    
+    
+    private func updateGestureRecognizers() {
+        let isLandscape = UIDevice.current.orientation.isLandscape
+        mainView.gestureRecognizers?.forEach { gestureRecognizer in
+            if let swipeGesture = gestureRecognizer as? UISwipeGestureRecognizer {
+                switch swipeGesture.direction {
+                case .up:
+                    swipeGesture.isEnabled = !isLandscape
+                case .left:
+                    swipeGesture.isEnabled = isLandscape
+                default:
+                    break
+                }
+            }
+        }
     }
     
     @objc private func didSwipe(_ sender: UISwipeGestureRecognizer) {
-        print("swipe up")
+        print("swipe")
         if sender.direction == .up {
             
             // fix size for screenshot
@@ -117,6 +152,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
                 self.present(activityViewController, animated: true, completion: nil)
             }
         }
+        
         
         
     }
