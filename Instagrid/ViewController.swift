@@ -92,6 +92,16 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     
     @objc private func didSwipe(_ sender: UISwipeGestureRecognizer) {
         print("swipe up")
+        if sender.direction == .up {
+            
+            // mainMiddleView must not have a zero bounds
+            guard mainMiddleview.bounds.size != .zero else { return }
+            // take a screen of the middleView
+            let renderer = UIGraphicsRenderer(size: mainMiddleview.bounds.size)
+            let image = renderer.image { ctx in
+                mainMiddleview.drawHierarchy(in: mainMiddleview.bounds, afterScreenUpdates: true)
+            }
+        }
     }
     
     

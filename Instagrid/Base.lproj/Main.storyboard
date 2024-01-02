@@ -300,7 +300,7 @@
                     </view>
                     <connections>
                         <outlet property="instagridFont" destination="w9v-mV-fji" id="rsx-7K-VNv"/>
-                        <outlet property="mainMiddleview" destination="USG-bh-DUJ" id="zhf-hm-LDN"/>
+                        <outlet property="mainMiddleview" destination="USG-bh-DUJ" id="maE-CT-cVw"/>
                         <outlet property="mainView" destination="T9j-Lg-boa" id="6QH-5r-bYf"/>
                         <outlet property="middleView1" destination="qMv-SZ-gnZ" id="Cdj-Ci-0f4"/>
                         <outlet property="middleView2" destination="QYI-l3-4Ar" id="fhc-9p-DI7"/>
