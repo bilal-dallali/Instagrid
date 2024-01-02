@@ -126,33 +126,28 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     @objc private func didSwipe(_ sender: UISwipeGestureRecognizer) {
-        print("swipe")
-        if sender.direction == .up {
-            
-            // fix size for screenshot
-            let fixedSize = CGSize(width: 300, height: 300)
-            let renderer = UIGraphicsImageRenderer(size: fixedSize)
-            let image = renderer.image { ctx in
-                // Redimensionner mainMiddleview temporairement pour le rendu
-                let originalFrame = mainMiddleview.frame
-                mainMiddleview.frame = CGRect(origin: originalFrame.origin, size: fixedSize)
-                mainMiddleview.drawHierarchy(in: CGRect(origin: .zero, size: fixedSize), afterScreenUpdates: true)
-                mainMiddleview.frame = originalFrame
-            }
-            
-            // Share the screenshot
-            DispatchQueue.main.async {
-                let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-                // Configuration supplémentaire pour iPad
-                if let popoverController = activityViewController.popoverPresentationController {
-                    popoverController.sourceView = self.view
-                    popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
-                    popoverController.permittedArrowDirections = []
-                }
-                self.present(activityViewController, animated: true, completion: nil)
-            }
+        // fix size for screenshot
+        let fixedSize = CGSize(width: 300, height: 300)
+        let renderer = UIGraphicsImageRenderer(size: fixedSize)
+        let image = renderer.image { ctx in
+            // Redimensionner mainMiddleview temporairement pour le rendu
+            let originalFrame = mainMiddleview.frame
+            mainMiddleview.frame = CGRect(origin: originalFrame.origin, size: fixedSize)
+            mainMiddleview.drawHierarchy(in: CGRect(origin: .zero, size: fixedSize), afterScreenUpdates: true)
+            mainMiddleview.frame = originalFrame
         }
         
+        // Share the screenshot
+        DispatchQueue.main.async {
+            let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+            // Configuration supplémentaire pour iPad
+            if let popoverController = activityViewController.popoverPresentationController {
+                popoverController.sourceView = self.view
+                popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+                popoverController.permittedArrowDirections = []
+            }
+            self.present(activityViewController, animated: true, completion: nil)
+        }
         
         
     }
