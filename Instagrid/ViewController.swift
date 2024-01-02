@@ -94,14 +94,31 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         print("swipe up")
         if sender.direction == .up {
             
-            // mainMiddleView must not have a zero bounds
-            guard mainMiddleview.bounds.size != .zero else { return }
-            // take a screen of the middleView
-            let renderer = UIGraphicsRenderer(size: mainMiddleview.bounds.size)
+            // fix size for screenshot
+            let fixedSize = CGSize(width: 300, height: 300)
+            let renderer = UIGraphicsImageRenderer(size: fixedSize)
             let image = renderer.image { ctx in
-                mainMiddleview.drawHierarchy(in: mainMiddleview.bounds, afterScreenUpdates: true)
+                // Redimensionner mainMiddleview temporairement pour le rendu
+                let originalFrame = mainMiddleview.frame
+                mainMiddleview.frame = CGRect(origin: originalFrame.origin, size: fixedSize)
+                mainMiddleview.drawHierarchy(in: CGRect(origin: .zero, size: fixedSize), afterScreenUpdates: true)
+                mainMiddleview.frame = originalFrame
+            }
+            
+            // Share the screenshot
+            DispatchQueue.main.async {
+                let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+                // Configuration supplémentaire pour iPad
+                if let popoverController = activityViewController.popoverPresentationController {
+                    popoverController.sourceView = self.view
+                    popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+                    popoverController.permittedArrowDirections = []
+                }
+                self.present(activityViewController, animated: true, completion: nil)
             }
         }
+        
+        
     }
     
     
