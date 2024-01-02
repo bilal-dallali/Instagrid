@@ -69,11 +69,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         swipeUpFont.font = UIFont(name: "Delm-Medium", size: 26)
         swipeLeftFont.font = UIFont(name: "Delm-Medium", size: 26)
         setLayer1()
-        
         setupTapGesture(for: middleView1, action: #selector(viewTapped))
         setupTapGesture(for: middleView2, action: #selector(viewTapped))
         setupTapGesture(for: middleView3, action: #selector(viewTapped))
         setupTapGesture(for: middleView4, action: #selector(viewTapped))
+        
+        
 
     }
     
@@ -106,7 +107,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         adjustImportedImageSize(in: middleView3)
         adjustImportedImageSize(in: middleView4)
         
-        removeAllImportedImages()
+        //removeAllImportedImages()
     }
     
     func setLayer1() {
@@ -125,7 +126,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         plusMiddleView1.layer.opacity = 0
         plusMiddleViewBottom.layer.opacity = 0
         
-        removeAllImportedImages()
+        //removeAllImportedImages()
     }
     
     func setLayer2() {
@@ -144,7 +145,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         middleView4.isHidden = true
         //middleView4.isUserInteractionEnabled = true
         
-        removeAllImportedImages()
+        //removeAllImportedImages()
     }
     
     func adjustImportedImageSize(in view: UIView) {
@@ -238,7 +239,13 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
 extension ViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let selectedImage = info[.originalImage] as? UIImage, let view = selectedView {
-            // CRéer imageView
+            // Supprimer l'ancienne image
+            view.subviews.forEach { subview in
+                if subview is UIImageView && subview.tag == 100 {
+                    subview.removeFromSuperview()
+                }
+            }
+            // Créer imageView
             let imageView = UIImageView(image: selectedImage)
             imageView.contentMode = .scaleAspectFit //scaleAspectFit
             imageView.clipsToBounds = true
