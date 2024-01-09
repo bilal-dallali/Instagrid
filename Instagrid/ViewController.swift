@@ -41,9 +41,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     var selectedView: UIView?
     
     @IBAction func selectLayout1(_ sender: UIButton) {
-        //sender.isSelected = true
-        //sender.isSelected.toggle()
-        
         setLayer1()
     }
     
@@ -57,11 +54,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         selected3.layer.opacity = 1
         resetLayers()
     }
-    
-//    @IBAction func upGesture(_ sender: Any) {
-//        shareMiddleViewScreenShot()
-    //    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -156,10 +148,13 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
             }
         } else {
             print("error image")
+            // error pop up
+            let alert = UIAlertController(title: "Error", message: "You must add an image", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            DispatchQueue.main.async {
+                self.present(alert, animated: true, completion: nil)
+            }
         }
-        
-        
-        
     }
     
     
@@ -175,9 +170,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         middleView2.isHidden = false
         middleView4.isHidden = false
         
-//        middleView2.isUserInteractionEnabled = true
-//        middleView4.isUserInteractionEnabled = true
-        
         plusMiddleViewTop.layer.opacity = 0
         plusMiddleViewBottom.layer.opacity = 0
         plusMiddleView1.layer.opacity = 1
@@ -190,8 +182,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         adjustImportedImageSize(in: middleView2)
         adjustImportedImageSize(in: middleView3)
         adjustImportedImageSize(in: middleView4)
-        
-        //removeAllImportedImages()
     }
     
     func setLayer1() {
@@ -209,8 +199,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         //middleView2.isUserInteractionEnabled = true
         plusMiddleView1.layer.opacity = 0
         plusMiddleViewBottom.layer.opacity = 0
-        
-        //removeAllImportedImages()
     }
     
     func setLayer2() {
@@ -227,9 +215,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         plusMiddleViewBottom.layer.opacity = 1
         
         middleView4.isHidden = true
-        //middleView4.isUserInteractionEnabled = true
-        
-        //removeAllImportedImages()
     }
     
     func adjustImportedImageSize(in view: UIView) {
@@ -268,10 +253,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         picker.sourceType = .photoLibrary
         present(picker, animated: true)
     }
-    
-//    func shareMiddleViewScreenShot() {
-//        print("screenshot")
-//    }
 }
 
 extension ViewController: UIImagePickerControllerDelegate {
