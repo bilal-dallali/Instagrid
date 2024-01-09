@@ -126,28 +126,38 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     @objc private func didSwipe(_ sender: UISwipeGestureRecognizer) {
-        // fix size for screenshot
-        let fixedSize = CGSize(width: 300, height: 300)
-        let renderer = UIGraphicsImageRenderer(size: fixedSize)
-        let image = renderer.image { ctx in
-            // Redimensionner mainMiddleview temporairement pour le rendu
-            let originalFrame = mainMiddleview.frame
-            mainMiddleview.frame = CGRect(origin: originalFrame.origin, size: fixedSize)
-            mainMiddleview.drawHierarchy(in: CGRect(origin: .zero, size: fixedSize), afterScreenUpdates: true)
-            mainMiddleview.frame = originalFrame
+        
+        // Check the presence of image in middleViews
+        let hasImageInMiddleView1 = middleView1.subviews.contains(where: { $0 is UIImageView && $0.tag == 100 })
+        let hasImageInMiddleView3 = middleView3.subviews.contains(where: { $0 is UIImageView && $0.tag == 100 })
+        
+        if hasImageInMiddleView1 && hasImageInMiddleView3 {
+            // fix size for screenshot
+            let fixedSize = CGSize(width: 300, height: 300)
+            let renderer = UIGraphicsImageRenderer(size: fixedSize)
+            let image = renderer.image { ctx in
+                // Redimensionner mainMiddleview temporairement pour le rendu
+                let originalFrame = mainMiddleview.frame
+                mainMiddleview.frame = CGRect(origin: originalFrame.origin, size: fixedSize)
+                mainMiddleview.drawHierarchy(in: CGRect(origin: .zero, size: fixedSize), afterScreenUpdates: true)
+                mainMiddleview.frame = originalFrame
+            }
+            
+            // Share the screenshot
+            DispatchQueue.main.async {
+                let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+                // Configuration supplémentaire pour iPad
+                if let popoverController = activityViewController.popoverPresentationController {
+                    popoverController.sourceView = self.view
+                    popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+                    popoverController.permittedArrowDirections = []
+                }
+                self.present(activityViewController, animated: true, completion: nil)
+            }
+        } else {
+            print("error image")
         }
         
-        // Share the screenshot
-        DispatchQueue.main.async {
-            let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-            // Configuration supplémentaire pour iPad
-            if let popoverController = activityViewController.popoverPresentationController {
-                popoverController.sourceView = self.view
-                popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
-                popoverController.permittedArrowDirections = []
-            }
-            self.present(activityViewController, animated: true, completion: nil)
-        }
         
         
     }
