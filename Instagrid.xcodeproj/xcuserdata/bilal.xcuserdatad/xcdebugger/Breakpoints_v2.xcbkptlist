@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "8B086171-01A8-4E8F-89AF-EFC779342EC2"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8CF03355-94BA-4523-99B8-D3EE8B08B01A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Instagrid/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "didSwipe(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8CF03355-94BA-4523-99B8-D3EE8B08B01A - 382b306c34da5758"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Instagrid.ViewController.didSwipe(__C.UISwipeGestureRecognizer) -&gt; ()"
+                  moduleName = "Instagrid"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bilal/Documents/github/Instagrid/Instagrid/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "132"
+                  endingLineNumber = "132"
+                  offsetFromSymbolStart = "376">
+               </Location>
+               <Location
+                  uuid = "8CF03355-94BA-4523-99B8-D3EE8B08B01A - f0419229c86ea785"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UIGraphicsImageRendererContext) -&gt; () in Instagrid.ViewController.didSwipe(__C.UISwipeGestureRecognizer) -&gt; ()"
+                  moduleName = "Instagrid"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bilal/Documents/github/Instagrid/Instagrid/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "128">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C4A1C8F2-C5D1-4061-A1D2-B65863D5AC2E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Instagrid/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "didSwipe(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EF26DFC4-B2E1-415A-9237-60A56976C70A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Instagrid/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "didSwipe(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EF26DFC4-B2E1-415A-9237-60A56976C70A - 382b306c34da5673"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Instagrid.ViewController.didSwipe(__C.UISwipeGestureRecognizer) -&gt; ()"
+                  moduleName = "Instagrid"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bilal/Documents/github/Instagrid/Instagrid/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "141"
+                  endingLineNumber = "141"
+                  offsetFromSymbolStart = "608">
+               </Location>
+               <Location
+                  uuid = "EF26DFC4-B2E1-415A-9237-60A56976C70A - 6bd34ba2c05234a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Swift.MainActor () -&gt; () in Instagrid.ViewController.didSwipe(__C.UISwipeGestureRecognizer) -&gt; ()"
+                  moduleName = "Instagrid"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bilal/Documents/github/Instagrid/Instagrid/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "142"
+                  endingLineNumber = "142"
+                  offsetFromSymbolStart = "108">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
