@@ -156,7 +156,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         }
     }
     
-    
+    // Configure a tapgesturerecognizer for a view
     func setupTapGesture(for view: UIView, action: Selector) {
         let tapGesture = UITapGestureRecognizer(target: self, action: action)
         view.addGestureRecognizer(tapGesture)
@@ -216,6 +216,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         middleView4.isHidden = true
     }
     
+    // Adjust picture size to adapt to the view
     func adjustImportedImageSize(in view: UIView) {
         for subview in view.subviews {
             if let imageView = subview as? UIImageView, imageView.tag == 100 {
@@ -224,21 +225,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         }
     }
     
-    func removeAllImportedImages() {
-        plusMiddleViewTop.isHidden = false
-        plusMiddleViewBottom.isHidden = false
-        let middleViews = [middleView1, middleView2, middleView3, middleView4]
-        
-        for middleView in middleViews {
-            // Delete all subviews
-            middleView?.subviews.forEach { subview in
-                if subview.tag == 100 {
-                    subview.removeFromSuperview()
-                }
-            }
-        }
-    }
-    
+    // Open image selector when the user tap on a view
     @objc func viewTapped(gesture: UITapGestureRecognizer) {
         if let view = gesture.view {
             selectedView = view
@@ -246,6 +233,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         }
     }
     
+    // Open UIImagePickerController to select a picture
     func importPicture() {
         let picker = UIImagePickerController()
         picker.delegate = self
@@ -255,6 +243,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
 }
 
 extension ViewController: UIImagePickerControllerDelegate {
+    // Handle the picture selection in the UIImagePickerController
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let selectedImage = info[.originalImage] as? UIImage, let view = selectedView {
             // Delete the older image
@@ -271,7 +260,6 @@ extension ViewController: UIImagePickerControllerDelegate {
             //Adjust size and position imageView
             imageView.frame = view.bounds
             imageView.tag = 100
-            view.addSubview(imageView)
             
             // Add imageVieww as subview of the middleView
             view.addSubview(imageView)
@@ -289,6 +277,7 @@ extension ViewController: UIImagePickerControllerDelegate {
         dismiss(animated: true, completion: nil)
     }
     
+    // Cancel the imagePickerController
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
