@@ -128,7 +128,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
             let fixedSize = CGSize(width: 300, height: 300)
             let renderer = UIGraphicsImageRenderer(size: fixedSize)
             let image = renderer.image { ctx in
-                // Redimensionner mainMiddleview temporairement pour le rendu
+                // Resize mainMiddleView temporarily to render
                 let originalFrame = mainMiddleview.frame
                 mainMiddleview.frame = CGRect(origin: originalFrame.origin, size: fixedSize)
                 mainMiddleview.drawHierarchy(in: CGRect(origin: .zero, size: fixedSize), afterScreenUpdates: true)
@@ -138,7 +138,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
             // Share the screenshot
             DispatchQueue.main.async {
                 let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-                // Configuration supplémentaire pour iPad
+                // iPad configuration
                 if let popoverController = activityViewController.popoverPresentationController {
                     popoverController.sourceView = self.view
                     popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
@@ -147,9 +147,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
                 self.present(activityViewController, animated: true, completion: nil)
             }
         } else {
-            print("error image")
             // error pop up
-            let alert = UIAlertController(title: "Error", message: "You must add an image", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Error", message: "You must add images", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             DispatchQueue.main.async {
                 self.present(alert, animated: true, completion: nil)
@@ -177,7 +176,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         plusMiddleView3.layer.opacity = 1
         plusMiddleView4.layer.opacity = 1
         
-        // Ajuster la taille des images pour toutes les middleViews
+        // Adjust the image size for all the middleViews
         adjustImportedImageSize(in: middleView1)
         adjustImportedImageSize(in: middleView2)
         adjustImportedImageSize(in: middleView3)
@@ -231,7 +230,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         let middleViews = [middleView1, middleView2, middleView3, middleView4]
         
         for middleView in middleViews {
-            // Supprimons toutes les sous-vues
+            // Delete all subviews
             middleView?.subviews.forEach { subview in
                 if subview.tag == 100 {
                     subview.removeFromSuperview()
@@ -258,32 +257,31 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
 extension ViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let selectedImage = info[.originalImage] as? UIImage, let view = selectedView {
-            // Supprimer l'ancienne image
+            // Delete the older image
             view.subviews.forEach { subview in
                 if subview is UIImageView && subview.tag == 100 {
                     subview.removeFromSuperview()
                 }
             }
-            // Créer imageView
+            // Create ImageView
             let imageView = UIImageView(image: selectedImage)
             imageView.contentMode = .scaleAspectFit //scaleAspectFit
             imageView.clipsToBounds = true
-            //(selectedView?.subviews.first as? UIImageView)?.image = selectedImage
             
-            //Ajuster la taille et position de l'imageView
+            //Adjust size and position imageView
             imageView.frame = view.bounds
             imageView.tag = 100
             view.addSubview(imageView)
             
-            //Ajouter l'imageView comme sous-vue de la middleView
+            // Add imageVieww as subview of the middleView
             view.addSubview(imageView)
             
-            // Masquer plusMiddleViewTop si l'image est ajoutée à middleView1
+            // Hide plusMiddleViewTop if image is added to middleView1
             if view == middleView1 {
                 plusMiddleViewTop.isHidden = true
             }
             
-            // Masquer plusMiddleViewBottom si l'image est ajoutée à middleView3
+            // Hide plusMiddleViewBottom if the image is added at middleView3
             if view == middleView3 {
                 plusMiddleViewBottom.isHidden = true
             }
