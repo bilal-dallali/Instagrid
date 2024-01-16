@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="landscape" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -21,20 +22,20 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Instagrid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T9j-Lg-boa" userLabel="MainView">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9v-mV-fji">
-                                        <rect key="frame" x="136" y="16" width="103" height="34"/>
+                                        <rect key="frame" x="282" y="8" width="103" height="34"/>
                                         <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="26"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="USG-bh-DUJ" userLabel="MiddleView">
-                                        <rect key="frame" x="37.5" y="173.5" width="300" height="300"/>
+                                        <rect key="frame" x="183.5" y="49.5" width="300" height="300"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qMv-SZ-gnZ" userLabel="MiddleView1">
                                                 <rect key="frame" x="15" y="15" width="127.5" height="127.5"/>
@@ -123,7 +124,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="tWp-3h-FyR" userLabel="SelectPicker">
-                                        <rect key="frame" x="48.5" y="525" width="278" height="80"/>
+                                        <rect key="frame" x="545" y="48.5" width="80" height="278"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="svT-HP-MNO" userLabel="View1">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -158,7 +159,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="awi-LD-SRy" userLabel="View2">
-                                                <rect key="frame" x="99" y="0.0" width="80" height="80"/>
+                                                <rect key="frame" x="0.0" y="99" width="80" height="80"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vn-77-ZWY">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -189,7 +190,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sth-n6-jxv" userLabel="View3">
-                                                <rect key="frame" x="198" y="0.0" width="80" height="80"/>
+                                                <rect key="frame" x="0.0" y="198" width="80" height="80"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdz-qp-Nhd">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -277,8 +278,8 @@
                                         <include reference="2jF-pq-6wi"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="2ic-ez-Jed"/>
                                         <exclude reference="7kx-Ev-kfx"/>
+                                        <include reference="2ic-ez-Jed"/>
                                         <include reference="DGa-ec-3ZC"/>
                                         <exclude reference="jJI-NC-tqG"/>
                                         <exclude reference="bET-EI-Pd9"/>
@@ -306,6 +307,8 @@
                         <outlet property="middleView2" destination="QYI-l3-4Ar" id="fhc-9p-DI7"/>
                         <outlet property="middleView3" destination="Ss7-4k-zxY" id="lDM-Hm-1f7"/>
                         <outlet property="middleView4" destination="87i-m4-cRg" id="PvS-Tp-uFe"/>
+                        <outlet property="middleViewXPosition" destination="s2E-02-qVf" id="UXC-G8-egb"/>
+                        <outlet property="middleViewYPosition" destination="d5F-jD-XXC" id="mfK-wT-dX0"/>
                         <outlet property="plusMiddleView1" destination="oUz-xb-Jgd" id="ytN-OW-CFn"/>
                         <outlet property="plusMiddleView2" destination="7h3-hW-a9K" id="FfV-Hi-uAS"/>
                         <outlet property="plusMiddleView3" destination="Qst-iq-ZdW" id="Sua-ZU-d6t"/>
@@ -323,7 +326,7 @@
                 <tapGestureRecognizer id="cIA-NE-jhe"/>
                 <swipeGestureRecognizer direction="up" id="MfW-6p-yoy">
                     <connections>
-                        <action selector="upGesture:" destination="BYZ-38-t0r" id="RdL-Mh-TfH"/>
+                        <action selector="didSwipe:" destination="BYZ-38-t0r" id="xDl-Ai-lCK"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>

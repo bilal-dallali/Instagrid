@@ -34,6 +34,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     @IBOutlet weak var plusMiddleViewTop: UIImageView!
     @IBOutlet weak var plusMiddleViewBottom: UIImageView!
     
+    @IBOutlet weak var middleViewYPosition: NSLayoutConstraint!
+    @IBOutlet weak var middleViewXPosition: NSLayoutConstraint!
     
     @IBOutlet weak var mainMiddleview: UIView!
     
@@ -117,7 +119,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         }
     }
     
-    @objc private func didSwipe(_ sender: UISwipeGestureRecognizer) {
+    @IBAction private func didSwipe(_ sender: UISwipeGestureRecognizer) {
         
         // Check the presence of image in middleViews
         let hasImageInMiddleView1 = middleView1.subviews.contains(where: { $0 is UIImageView && $0.tag == 100 })
@@ -135,16 +137,48 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
                 mainMiddleview.frame = originalFrame
             }
             
+            //Code animation
+            if sender.direction == .up {
+                
+            }
+            
+            UIView.animate(withDuration: 1.0) {
+                if sender.direction == .up {
+                    self.middleViewYPosition.constant = -500
+            
+                } else {
+                    self.middleViewXPosition.constant = -500
+                }
+                self.mainView.layoutIfNeeded()
+            }
+            
             // Share the screenshot
             DispatchQueue.main.async {
                 let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+                
+                activityViewController.completionWithItemsHandler = {
+                    (_,_,_,_) in
+                    UIView.animate(withDuration: 1.0) {
+                        if sender.direction == .up {
+                            self.middleViewYPosition.constant = 12
+                        } else {
+                            self.middleViewXPosition.constant = 0
+                        }
+                        
+                        self.mainView.layoutIfNeeded()
+                    }
+                }
                 // iPad configuration
                 if let popoverController = activityViewController.popoverPresentationController {
                     popoverController.sourceView = self.view
                     popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
                     popoverController.permittedArrowDirections = []
                 }
-                self.present(activityViewController, animated: true, completion: nil)
+                self.present(activityViewController, animated: true) {
+                    // Reinitialise middleViewPosition
+                    //self.middleViewYPosition.constant = 12
+                    
+                }
             }
         } else {
             // error pop up
@@ -240,6 +274,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         picker.sourceType = .photoLibrary
         present(picker, animated: true)
     }
+    
 }
 
 extension ViewController: UIImagePickerControllerDelegate {
@@ -254,7 +289,7 @@ extension ViewController: UIImagePickerControllerDelegate {
             }
             // Create ImageView
             let imageView = UIImageView(image: selectedImage)
-            imageView.contentMode = .scaleAspectFit //scaleAspectFit
+            imageView.contentMode = .scaleAspectFill //scaleAspectFit
             imageView.clipsToBounds = true
             
             //Adjust size and position imageView
