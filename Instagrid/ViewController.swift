@@ -138,16 +138,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
             }
             
             //Code animation
-            if sender.direction == .up {
-                
-            }
             
             UIView.animate(withDuration: 1.0) {
                 if sender.direction == .up {
-                    self.middleViewYPosition.constant = -500
-            
+                    self.middleViewYPosition.constant = -620
                 } else {
-                    self.middleViewXPosition.constant = -500
+                    self.middleViewXPosition.constant = -600
                 }
                 self.mainView.layoutIfNeeded()
             }
@@ -164,7 +160,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
                         } else {
                             self.middleViewXPosition.constant = 0
                         }
-                        
                         self.mainView.layoutIfNeeded()
                     }
                 }
